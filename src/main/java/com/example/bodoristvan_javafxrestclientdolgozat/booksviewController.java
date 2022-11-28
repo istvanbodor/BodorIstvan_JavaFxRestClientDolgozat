@@ -61,10 +61,10 @@ public class booksviewController extends Controller {
     @FXML
     public void insertClick(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("create-people-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("create-books-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 640, 480);
             Stage stage = new Stage();
-            stage.setTitle("Create People");
+            stage.setTitle("Create Book");
             stage.setScene(scene);
             stage.show();
             insertButton.setDisable(true);
@@ -98,7 +98,7 @@ public class booksviewController extends Controller {
                 FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("update-books-view.fxml"));
                 Scene scene = new Scene(fxmlLoader.load(), 640, 480);
                 Stage stage = new Stage();
-                stage.setTitle("Update People");
+                stage.setTitle("Update Books");
                 stage.setScene(scene);
                 UpdateBooksController controller = fxmlLoader.getController();
                 controller.setPerson(selected);
@@ -125,7 +125,7 @@ public class booksviewController extends Controller {
     public void deleteClick(ActionEvent actionEvent) {
         int selectedIndex = booksTable.getSelectionModel().getSelectedIndex();
         if (selectedIndex == -1) {
-            warning("Please select a person from the list first");
+            warning("Please select a book from the list first");
             return;
         }
 
